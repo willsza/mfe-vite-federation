@@ -13,10 +13,12 @@ export default defineConfig({
       exposes: {
         "./Statement": "./src/components/Statement",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "tailwindcss"],
     }),
   ],
   build: {
     target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
   },
 });

@@ -13,10 +13,12 @@ export default defineConfig({
       exposes: {
         "./Transfers": "./src/components/Transfers",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "tailwindcss"],
     }),
   ],
   build: {
     target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
   },
 });
