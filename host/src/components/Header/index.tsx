@@ -1,6 +1,9 @@
+import { useStore } from "../../store";
 import { IconUser } from "../IconUser";
 
 export function Header() {
+  const user = useStore((state) => state.user);
+
   return (
     <header className="flex justify-between items-center shadow-lg p-4 border-b-[1px]">
       <section>
@@ -15,7 +18,7 @@ export function Header() {
         <button className="btn btn-primary" type="button">
           <IconUser className="h-5 w-5" />
         </button>
-        John
+        {user}
       </section>
     </header>
   );
