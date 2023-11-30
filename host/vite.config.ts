@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     federation({
       name: "host_app",
+      filename: "remoteEntry.js",
       exposes: {
         "./Shell": "./src/components/Shell",
         "./store": "./src/store/index",

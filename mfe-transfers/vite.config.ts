@@ -9,7 +9,6 @@ export default defineConfig({
     federation({
       name: "transfer_app",
       filename: "remoteEntry.js",
-      // Modules to expose
       exposes: {
         "./Transfers": "./src/components/Transfers",
       },
