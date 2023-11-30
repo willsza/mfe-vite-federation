@@ -1,7 +1,9 @@
 import { useStore } from "host_app/store";
 
 export function Statement() {
-  const addToBalance = useStore((state) => state.addToBalance);
+  const addToBalance = useStore(
+    (state: { addToBalance: (amount: number) => void }) => state.addToBalance
+  );
 
   return (
     <section className="justify-center p-8 flex-1">
@@ -16,6 +18,7 @@ export function Statement() {
         <button
           className="bg-blue-600 text-white inline-block w-[200px] my-3 rounded py-3 px-4"
           onClick={() => {
+            console.log("addToBalance");
             addToBalance(100);
           }}
           type="button"

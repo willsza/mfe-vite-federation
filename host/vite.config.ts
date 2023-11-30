@@ -16,7 +16,7 @@ export default defineConfig({
         statement_app: "http://localhost:5001/assets/remoteEntry.js",
         transfer_app: "http://localhost:5002/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom", "tailwindcss"],
+      shared: ["react", "react-dom", "zustand", "tailwindcss"],
     }),
   ],
   build: {
