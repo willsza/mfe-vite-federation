@@ -1,10 +1,18 @@
-export default function Shell() {
+import { Header } from "../Header";
+import { Menu } from "../Menu";
+
+interface ShellProps {
+  children: React.ReactNode;
+}
+
+export function Shell({ children }: ShellProps): JSX.Element {
   return (
-    <div>
-      <h1>Shell</h1>
-      <p>
-        <a href="/about">About</a>
-      </p>
-    </div>
+    <>
+      <Header />
+      <main className="bg-slate-100 flex">
+        <Menu />
+        {children}
+      </main>
+    </>
   );
 }
