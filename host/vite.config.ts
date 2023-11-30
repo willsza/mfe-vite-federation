@@ -8,6 +8,10 @@ export default defineConfig({
     react(),
     federation({
       name: "host_app",
+      exposes: {
+        "./Shell": "./src/components/Shell",
+        "./store": "./src/store/index",
+      },
       remotes: {
         statement_app: "http://localhost:5001/assets/remoteEntry.js",
         transfer_app: "http://localhost:5002/assets/remoteEntry.js",
@@ -16,6 +20,7 @@ export default defineConfig({
     }),
   ],
   build: {
+    modulePreload: false,
     target: "esnext",
     minify: false,
     cssCodeSplit: false,

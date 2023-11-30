@@ -1,4 +1,8 @@
+import { useStore } from "host_app/store";
+
 export function Statement() {
+  const addToBalance = useStore((state) => state.addToBalance);
+
   return (
     <section className="justify-center p-8 flex-1">
       <h1 className="flex flex-col text-center">
@@ -11,7 +15,9 @@ export function Statement() {
       <section className="text-center">
         <button
           className="bg-blue-600 text-white inline-block w-[200px] my-3 rounded py-3 px-4"
-          onClick={() => {}}
+          onClick={() => {
+            addToBalance(100);
+          }}
           type="button"
         >
           Add 100

@@ -9,14 +9,17 @@ export default defineConfig({
     federation({
       name: "statement_app",
       filename: "remoteEntry.js",
-      // Modules to expose
       exposes: {
         "./Statement": "./src/components/Statement",
+      },
+      remotes: {
+        host_app: "http://localhost:5000/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom", "tailwindcss"],
     }),
   ],
   build: {
+    modulePreload: false,
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
