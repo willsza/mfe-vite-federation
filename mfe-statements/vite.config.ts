@@ -1,5 +1,6 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
+
 import { defineConfig, loadEnv } from "vite";
 
 const env = loadEnv("all", process.cwd());
