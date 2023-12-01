@@ -1,6 +1,8 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
-import { defineConfig } from "vite";
+import { defineConfig, loadEnv } from "vite";
+
+const env = loadEnv("all", process.cwd());
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,7 +14,11 @@ export default defineConfig({
       exposes: {
         "./Transfers": "./src/components/Transfers",
       },
-      shared: ["react", "react-dom", "tailwindcss"],
+      remotes: {
+        host_app: `${env.VITE_HOST_APP}/assets/remoteEntry.js`,
+        shared_app: `${env.VITE_SHARED_APP}/assets/remoteEntry.js`,
+      },
+      shared: ["react", "react-dom", "zustand"],
     }),
   ],
   build: {
