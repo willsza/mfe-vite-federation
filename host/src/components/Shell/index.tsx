@@ -1,17 +1,15 @@
+import { Outlet } from "react-router-dom";
+
 import { Header } from "../Header";
 import { Menu } from "../Menu";
 
-interface ShellProps {
-  children: React.ReactNode;
-}
-
-export function Shell({ children }: ShellProps): JSX.Element {
+export function Shell(): JSX.Element {
   return (
     <>
       <Header />
       <main className="bg-slate-100 flex">
         <Menu />
-        {children}
+        <Outlet />
       </main>
     </>
   );

@@ -1,16 +1,21 @@
+import { Link } from "react-router-dom";
+
 export function Menu() {
   return (
     <nav className="h-[calc(100vh-90px)] bg-white inline-block border-r-[1px] min-w-[200px]">
       <ul>
         <li>
-          <a className="p-3 border-b-[1px] block font-medium" href="/">
+          <Link className="p-3 border-b-[1px] block font-medium" to="/">
             › Home
-          </a>
+          </Link>
         </li>
         <li>
-          <a className="p-3 border-b-[1px] block font-medium" href="/transfers">
+          <Link
+            className="p-3 border-b-[1px] block font-medium"
+            to="/transfers"
+          >
             › Transferências
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
