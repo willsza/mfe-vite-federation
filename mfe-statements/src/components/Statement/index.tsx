@@ -1,4 +1,4 @@
-import { useStore } from "host_app/store";
+import { useStore } from "shared_app/store";
 
 export function Statement() {
   const addToBalance = useStore(

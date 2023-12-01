@@ -15,6 +15,7 @@ export default defineConfig({
       },
       remotes: {
         host_app: `${env.VITE_HOST_APP}/assets/remoteEntry.js`,
+        shared_app: `${env.VITE_SHARED_APP}/assets/remoteEntry.js`,
       },
       shared: ["react", "react-dom", "zustand"],
     }),

@@ -1,9 +1,9 @@
-import { useStore } from "../../store";
+import { useStore } from "shared_app/store";
 import { IconUser } from "../IconUser";
 
 export function Header() {
-  const user = useStore((state) => state.user);
-  const balance = useStore((state) => state.balance);
+  const user = useStore((state: { user: string }) => state.user);
+  const balance = useStore((state: { balance: number }) => state.balance);
 
   return (
     <header className="flex justify-between items-center shadow-lg p-4 border-b-[1px]">
