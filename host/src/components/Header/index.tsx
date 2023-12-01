@@ -8,7 +8,7 @@ export function Header() {
   return (
     <header className="flex justify-between items-center shadow-lg p-4 border-b-[1px]">
       <section>
-        <h1>Header</h1>
+        <h1>Headerr</h1>
         <small className="text-[11px] font-semibold">(packages/ui)</small>
       </section>
 

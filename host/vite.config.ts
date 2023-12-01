@@ -14,13 +14,14 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./Shell": "./src/components/Shell",
-        "./store": "./src/store/index",
+        "./store": "./src/store",
+        "./styles": "./src/index.css",
       },
       remotes: {
         statement_app: `${env.VITE_STATEMENT_APP}/assets/remoteEntry.js`,
         transfer_app: `${env.VITE_TRANSFER_APP}/assets/remoteEntry.js`,
       },
-      shared: ["react", "react-dom", "zustand", "tailwindcss"],
+      shared: ["react", "react-dom", "zustand"],
     }),
   ],
   build: {

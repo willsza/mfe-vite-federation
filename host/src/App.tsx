@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Statement } from "statement_app/Statement";
 import { Shell } from "./components/Shell";
 

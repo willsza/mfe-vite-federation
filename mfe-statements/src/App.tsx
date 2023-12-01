@@ -1,5 +1,3 @@
-import "./App.css";
-
 import { Statement } from "./components/Statement";
 
 function App() {

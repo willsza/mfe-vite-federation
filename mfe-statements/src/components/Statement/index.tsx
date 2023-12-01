@@ -16,12 +16,8 @@ export function Statement() {
 
       <section className="text-center">
         <button
-          className="bg-blue-600 text-white inline-block w-[200px] my-3 rounded py-3 px-4"
-          onClick={() => {
-            console.log("addToBalance");
-            addToBalance(100);
-          }}
-          type="button"
+          className="text-white inline-block w-[200px] my-3 rounded py-3 px-4 bg-blue-600"
+          onClick={() => addToBalance(100)}
         >
           Add 100
         </button>
