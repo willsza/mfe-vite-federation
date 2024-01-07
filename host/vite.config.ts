@@ -1,11 +1,9 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
-
 import { defineConfig, loadEnv } from "vite";
 
 const env = loadEnv("all", process.cwd());
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -21,7 +19,7 @@ export default defineConfig({
         transfer_app: `${env.VITE_TRANSFER_APP}/assets/remoteEntry.js`,
         shared_app: `${env.VITE_SHARED_APP}/assets/remoteEntry.js`,
       },
-      shared: ["react", "react-dom", "zustand"],
+      shared: ["react", "react-dom", "react-router-dom", "zustand"],
     }),
   ],
   build: {

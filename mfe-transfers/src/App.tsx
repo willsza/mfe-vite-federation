@@ -1,5 +1,19 @@
+import { Suspense } from "react";
+import { BrowserRouter } from "react-router-dom";
+
+import { Template } from "shared_app/Template";
+import { Transfers } from "./components/Transfers";
+
 function App() {
-  return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+  return (
+    <BrowserRouter>
+      <Suspense fallback={"loading..."}>
+        <Template>
+          <Transfers />
+        </Template>
+      </Suspense>
+    </BrowserRouter>
+  );
 }
 
 export default App;

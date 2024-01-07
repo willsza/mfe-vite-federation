@@ -22,6 +22,10 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "../mfe-shared/src/components/Template",
+    "../mfe-shared/src/components/Menu"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -18,7 +18,7 @@ export default defineConfig({
         host_app: `${env.VITE_HOST_APP}/assets/remoteEntry.js`,
         shared_app: `${env.VITE_SHARED_APP}/assets/remoteEntry.js`,
       },
-      shared: ["react", "react-dom", "zustand"],
+      shared: ["react", "react-dom", "react-router-dom", "zustand"],
     }),
   ],
   build: {
@@ -26,5 +26,8 @@ export default defineConfig({
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
+  },
+  server: {
+    port: 5003,
   },
 });

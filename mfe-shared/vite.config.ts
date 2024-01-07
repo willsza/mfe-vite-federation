@@ -2,7 +2,6 @@ import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
     react(),
@@ -10,9 +9,12 @@ export default defineConfig({
       name: "shared_app",
       filename: "remoteEntry.js",
       exposes: {
+        "./Header": "./src/components/Header",
+        "./Menu": "./src/components/Menu",
+        "./Template": "./src/components/Template",
         "./store": "./src/store",
       },
-      shared: ["react", "react-dom", "zustand"],
+      shared: ["react", "react-dom", "react-router-dom", "zustand"],
     }),
   ],
   build: {
@@ -20,5 +22,8 @@ export default defineConfig({
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
+  },
+  server: {
+    port: 5002,
   },
 });
